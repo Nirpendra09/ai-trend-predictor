@@ -44,20 +44,20 @@ export function Header({ isScrolled }: HeaderProps) {
         {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full blur-2xl transform rotate-45"
+            className="absolute -top-4 -right-4 w-16 h-16 sm:w-24 sm:h-24 bg-white/10 rounded-full blur-2xl transform rotate-45"
             initial="initial"
             animate={isScrolled ? "collapsed" : "expanded"}
             variants={decorativeElementVariants}
           />
           <motion.div
-            className="absolute -bottom-4 -left-4 w-24 h-24 bg-white/10 rounded-full blur-2xl transform -rotate-45"
+            className="absolute -bottom-4 -left-4 w-16 h-16 sm:w-24 sm:h-24 bg-white/10 rounded-full blur-2xl transform -rotate-45"
             initial="initial"
             animate={isScrolled ? "collapsed" : "expanded"}
             variants={decorativeElementVariants}
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-full">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative h-full">
           <motion.div
             className="h-full flex flex-col justify-center"
             initial={{ alignItems: "center" }}
@@ -86,10 +86,10 @@ export function Header({ isScrolled }: HeaderProps) {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                initial={{ width: "24px", height: "24px" }}
+                initial={{ width: "20px", height: "20px" }}
                 animate={{
-                  width: isScrolled ? "20px" : "24px",
-                  height: isScrolled ? "20px" : "24px",
+                  width: isScrolled ? "16px" : "20px",
+                  height: isScrolled ? "16px" : "20px",
                 }}
                 transition={{
                   duration: 0.3,
@@ -104,10 +104,10 @@ export function Header({ isScrolled }: HeaderProps) {
                 />
               </motion.svg>
               <motion.h1
-                className="font-bold text-white font-sans tracking-tight"
-                initial={{ fontSize: "1.5rem" }}
+                className="font-bold text-white font-sans tracking-tight text-base sm:text-lg md:text-xl"
+                initial={{ fontSize: "1.25rem" }}
                 animate={{
-                  fontSize: isScrolled ? "1.25rem" : "1.5rem",
+                  fontSize: isScrolled ? "1rem" : "1.25rem",
                 }}
                 transition={{
                   duration: 0.3,
@@ -119,18 +119,18 @@ export function Header({ isScrolled }: HeaderProps) {
             </motion.div>
 
             <motion.div
-              className="w-16 h-0.5 bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200 rounded-full opacity-60"
+              className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200 rounded-full opacity-60"
               initial={{
-                width: "64px",
+                width: "48px",
                 opacity: 0.6,
-                marginTop: "6px",
-                marginBottom: "6px",
+                marginTop: "4px",
+                marginBottom: "4px",
               }}
               animate={{
-                width: isScrolled ? "0px" : "64px",
+                width: isScrolled ? "0px" : "48px",
                 opacity: isScrolled ? 0 : 0.6,
-                marginTop: isScrolled ? "0px" : "6px",
-                marginBottom: isScrolled ? "0px" : "6px",
+                marginTop: isScrolled ? "0px" : "4px",
+                marginBottom: isScrolled ? "0px" : "4px",
               }}
               transition={{
                 duration: 0.3,
@@ -139,16 +139,16 @@ export function Header({ isScrolled }: HeaderProps) {
             />
 
             <motion.p
-              className="text-blue-100 text-sm max-w-2xl"
+              className="text-blue-100 text-xs sm:text-sm max-w-2xl text-center px-2 sm:px-0"
               initial={{
                 height: "auto",
                 opacity: 1,
-                marginTop: 4,
+                marginTop: 2,
               }}
               animate={{
                 height: isScrolled ? 0 : "auto",
                 opacity: isScrolled ? 0 : 1,
-                marginTop: isScrolled ? 0 : 4,
+                marginTop: isScrolled ? 0 : 2,
               }}
               transition={{
                 duration: 0.3,
